@@ -1,0 +1,90 @@
+<html>
+<head ><h1><b><i>LA MEJOR CAFETERI'A </i></b></h1>
+
+<ul id= "menu">
+<Li> <a href="/">HOME</a></Li>
+
+<Li> <a href="about">ABOUT</a></Li>
+
+<Li> <a href="sign_up">SIGN_UP</a></Li>
+
+<Li> <a href="log_in">LOG_IN</a></Li>
+
+</ul>
+</head>
+<script >
+	
+</script>
+
+<style type="text/css">
+#header {
+	color: black;
+	padding: 50px;
+	height: 200px;
+}
+
+#sign-up {
+	padding: 10px;
+	color: ;
+	float: center;
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+ul#menu li {
+	list-style-type: none;
+	color: green;
+	float: center;
+	display: inline;
+        padding: 10px;
+}
+
+.backgroundA {
+        background-color: red;
+
+}   
+
+.backgroundB {
+	background-image: url("/images/hot-cup.jpeg");
+	background-size: 100% 100%;
+} 
+
+.backgroundC {
+	background-image: url("heart.jpg");
+        background-size: 100% 100%;
+        background-color: lightgrey;
+
+}
+form {
+	float: center;
+}
+	
+</style>
+<body >
+<div id="header" class="backgroundB">
+<h1><b><i> </i></b></h1>
+
+</div >
+<div  class="backgroundC">
+<form id= "sign-up" action = "/user" method= "POST">
+FIRSTNAME:<br>
+	<input type = "text" name="firstname"><br>
+SECONDNAME:<br>
+	<input type="text" name= "lastname"><br>
+	EMAIL:<br>
+	<input type="email" name="email"><br>
+PASSWORD:<br>
+	<input type="password" name="password"><br>
+CONFIRMPASSWORD:<br>
+	<input type="password" name="password"><br>
+
+	<input type="submit"value="submit">
+	
+
+</form>
+</div>	
+</body>
+
+
+
+</html>
