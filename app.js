@@ -8,25 +8,20 @@ var fs = require('fs');
 var mysql = require('mysql');
 var form = require('formidable');
 var jsonparser = bodyParser.json();
-var urlencodedparser= bodyParser.urlencoded({extended:false});
-var routes = require('./routes/index');
+var urlencodedparser = bodyParser.urlencoded({ extended: false });
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-
 
 var app = express();
-app.listen(3000);
-
-//mysql database connection
-
+app.listen(3000, () => {
+    console.log('App listening on port 3000');
+});
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '../views'));
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -35,27 +30,23 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/index',index);
-app.use('/users',users);
 
-
-app.use('/image', express.static(__dirname + '/Images'));
 // routes
+app.use('/', index);
 
 
-fs.readdirSync('./controllers').forEach(function(file){
+fs.readdirSync('./controllers').forEach(function (file) {
 
-    if(file.substr(-3)=='.js'){
+    if (file.substr(-3) == '.js') {
 
-        route = require('./controllers/'+ file);
+        route = require('./controllers/' + file);
         route.controllers(app);
     }
 });
 
 
 /// catch 404 and forwarding to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -66,9 +57,10 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
+        console.log('We have an error!!', err);
         res.status(err.status || 500);
-        res.render('error', {
+        res.render('error.jade', {
             message: err.message,
             error: err
         });
@@ -77,9 +69,9 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-    res.render('/error', {
+    res.render('error.jade', {
         message: err.message,
         error: {}
     });

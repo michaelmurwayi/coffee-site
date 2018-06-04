@@ -1,127 +1,116 @@
 <html>
-<head></head>
-<script type="text/javascript">
 
-function writecookie () {
-	if (document.log_in.username.value =="") {
-		alert("Enter name");
-		return;
-	}
-	cookievalue= escape(document.log_in.username.value) + ";";
-document.cookie="name=" + cookievalue;
-document.write ("Setting Cookies : " + "name=" + cookievalue );
-}
-	
-</script>
+    <head></head>
+    <style>
+        body {
+            /* background-color: ; */
+            /* background-image:  url("cup-of-coffee"); */
+        }
 
-<style >
+        ul#menu li {
+            list-style-type: none;
+            padding-right: 5px;
+            color: green;
+            text-align: center;
+            display: inline;
+            padding: 10px;
 
+        }
 
-body {
-	background-color: ;
-	background-image:  url("cup-of-coffee");
-}
+        #log_in {}
 
-ul#menu li {
-	list-style-type: none;
-	padding-right: 5px;
-	color: green;
-	text-align: center;
-	display: inline;
-	padding: 10px;
+        #header {
+            /* background-color:; */
+            color: white;
+            text-align: left;
+            padding: 30px;
+            width: 100%;
+            height: 350px;
+            background-image: url("/images/love.jpeg");
+            background-size: 100% 150%;
 
-}
-#log_in {
-    
-	}
-#header{
-	background-color:;
-	color: white;
-	text-align: left;
-	padding: 30px;
-	width: 100%;
-	height: 350px;
-	background-image: url("/images/love.jpeg");
-	background-size: 100% 150%;
+        }
 
-}   
+        #aside {
+            background-color: grey;
+            width: 30%;
+            height: 400px;
+            float: right;
 
-#aside {
-	background-color: 
+        }
 
+        #footer {
+            /* background-color: ; */
+            float: bottom;
 
+        }
 
+        .backgroundA {
+            background-size: 100% 100%;
+            background-image: url("/images/cup-of-coffee.jpeg");
+            height: 400px;
+            width: 100%;
+        }
 
-	grey;
-	width: 30%;
-	height: 400px;
-	float: right;
-   
-}
+        div {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
 
-#footer {
-	background-color: ;
-	float: bottom;
+    <body>
 
-}
-.backgroundA {
-	background-size: 100% 100%;
-	background-image: url("/images/cup-of-coffee.jpeg");
-	height: 400px;
-	width: 100%;
-}
+        <div id="header" class="backgroundA">
+            <h1>
+                <b>
+                    <i>LA MEJOR CAFETERI'A </i>
+                </b>
+            </h1>
 
-div{
-	height:100px;
-	width: 100px;
-}
+            <ul id="menu">
+                <Li>
+                    <a href="/">HOME</a>
+                </Li>
 
-</style>
-<body>
+                <Li>
+                    <a href="about">ABOUT</a>
+                </Li>
 
-<div id="header" class="backgroundA">
-<h1><b><i>LA MEJOR CAFETERI'A </i></b></h1>
+                <Li>
+                    <a href="sign_up">SIGN_UP</a>
+                </Li>
 
-<ul id= "menu">
-<Li> <a href="/">HOME</a></Li>
+                <Li>
+                    <a href="log_in">LOG_IN</a>
+                </Li>
 
-<Li> <a href="about">ABOUT</a></Li>
-
-<Li> <a href="sign_up">SIGN_UP</a></Li>
-
-<Li> <a href="log_in">LOG_IN</a></Li>
-
-</ul>
-
-</div>
+            </ul>
+        </div>
 
 
-<div id= "aside" class="backgroundB"><p><i> THIS IS THE OFFICIAL LOG_IN PAGE  </i></p></div>
+        <div id="aside" class="backgroundB">
+            <p>
+                <i> THIS IS THE OFFICIAL LOG_IN PAGE </i>
+            </p>
+        </div>
 
 
-</div>
-<forms id="log_in">
-	
-	USERNAME :<input type = "text" name="username"> <br>
-	<br>
-	PASSWORD :<input type = "password">
-	<br>
-    <input type="button" value="log_in" onclick="Writecookie();"/>
-     <input type="button" value="forgotten password??" />
+        <div>
+            <form id="log_in">
+
+                USERNAME :
+                <input type="text" name="username">
+                <br>
+                <br> PASSWORD :
+                <input type="password">
+                <br>
+                <input type="button" value="log_in" />
+                <input type="button" value="forgotten password??" />
+            </form>
+        </div>
 
 
-<script type="text/javascript">
+        <div id="footer"></div>
+    </body>
 
-  var form = document.getElementById('sign_up');
-  form.onsubmit = function(event){
-
-  	event.preventDefault();
-  };
-	
-	
-</script>
-</div>
-<div id="footer"></div>
-</forms>
-</body>
 </html>
