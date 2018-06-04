@@ -1,4 +1,3 @@
-var express = require('express');
 var mysql = require('mysql');
 
 var con = mysql.createconnection({
@@ -9,7 +8,7 @@ var con = mysql.createconnection({
     database:'huncho',
 });
 
-connection.connect((err){
+connection.connect((err) => {
 	if (err) throw err;
 
 	console.log('connected');
